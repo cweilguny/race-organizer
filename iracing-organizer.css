@@ -1,0 +1,50 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #111111;
+}
+
+.week-inner {
+    margin: 10px;
+    padding: 0 0 10px 0;
+    border-radius: 10px;
+    background: #222222;
+}
+
+.week-description {
+    margin-bottom: 7px;
+    padding: 1px 7px;
+    color: #e32d30;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    border-radius: 10px 10px 0 0;
+    background: #666666;
+}
+
+.week-date, .week-number {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 2px 5px;
+    color: #362b8c;
+}
+
+.serie-line {
+    padding: 2px 7px;
+    line-height: 25px;
+}
+
+.serie-name {
+    margin-right: 10px;
+    display: inline-block;
+    width: 60px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.track-name {
+    font-size: 14px;
+    color: #eeeeee;
+}
