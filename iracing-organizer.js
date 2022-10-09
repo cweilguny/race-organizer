@@ -87,7 +87,7 @@ function buildTable() {
 
 function weekHtml(week) {
     let html = '';
-    html += '<div class="week col-3 px-0"><div id="week' + week + '" class="week-inner">';
+    html += '<div class="week col-sm-6 col-lg-4 px-0"><div id="week' + week + '" class="week-inner">';
     html += '   <div class="week-description">';
     html += '       <span class="week-number">#' + week + '</span>';
     html += '       // ';

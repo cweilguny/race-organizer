@@ -18,7 +18,7 @@ body {
     font-weight: bold;
     text-align: right;
     border-radius: 10px 10px 0 0;
-    background: #666666;
+    background: #999999;
 }
 
 .week-date, .week-number {
@@ -47,4 +47,5 @@ body {
 .track-name {
     font-size: 14px;
     color: #eeeeee;
+    font-weight: bold;
 }
