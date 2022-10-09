@@ -8,6 +8,7 @@ body {
     padding: 0 0 10px 0;
     border-radius: 10px;
     background: #222222;
+    box-shadow: 0 0 7px #666666;
 }
 
 .week-description {
