@@ -8,6 +8,7 @@ const tracks = {
     'SEBR': 'Sebring',
     'SPAF': 'Spa',
     'WATB': 'Watkins Glen',
+    'WATC': 'Watkins Glen Classic Boot',
     'ROAM': 'Road America',
     'INDY': 'Indianapolis',
     'MOTE': 'Motegi',
@@ -21,6 +22,7 @@ const tracks = {
     'FUJI': 'Fuji',
     'SNET': 'Snetterton',
     'HOCK': 'Hockenheim',
+    'SILV': 'Silverstone',
     'MIDO': 'Mid-Ohio',
     'SAND': 'Sandown',
     'OULT': 'Oulton Park',
@@ -55,6 +57,11 @@ const series = [
         id: 'TCR',
         bgColor: '#000000',
         tracks: ['SPAF', 'DAYT', 'OSCH', 'RATL', 'DONN', 'SEBR', 'OULT', 'NORC', 'RUDS', 'ROAM', 'REDB', 'LAGU']
+    },
+    {
+        id: 'EURO',
+        bgColor: '#5e6061',
+        tracks: ['NORC', 'SPAF', 'COTA', 'ROAM', 'WATC', 'SILV', 'DAYT', 'MONZ', 'REDB', 'LEMA', 'SEBR', 'FUJI']
     },
     {
         id: 'SR10',
