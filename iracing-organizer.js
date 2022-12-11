@@ -3,6 +3,7 @@ const tracks = {
     'DAYT': 'Daytona',
     'BARC': 'Barcelona',
     'BARN': 'Barcelona (National)',
+    'BARH': 'Barcelona (Historic)',
     'RATL': 'Road Atlanta',
     'OSCH': 'Oschersleben',
     'SEBR': 'Sebring',
@@ -34,51 +35,43 @@ const tracks = {
     'RUDS': 'Rudskogen Motorsenter',
     'PHIL': 'Phillip Island',
     'MOPA': 'Mount Panorama',
-    'CHAR': 'Charlotte Motor Speedway'
+    'CHAR': 'Charlotte Motor Speedway',
+    'MAGN': 'Magny Cours',
+    'DETR': 'Detroit Grand Prix at Belle Isle',
+    'BRAN': 'Brands Hatch',
+    'SONO': 'Sonoma Raceway',
+    'ORAN': 'Oran Park Raceway',
+    'TSUK': 'Tsukuba Circuit',
+    'NURB': 'Nürburgring'
 };
 
 const series = [
     {
         id: 'PCUP',
         bgColor: '#25395e',
-        tracks: ['WATB', 'RATL', 'REDB', 'MONZ', 'FUJI', 'SPAF', 'HOCK', 'IMOL', 'PHIL', 'MOPA', 'CARL', 'NORC']
+        tracks: ['OULT', 'CARL', 'CANT', 'MAGN', 'HOCK', 'SILV', 'RUDS', 'DETR', 'ROAM', 'BARH', 'SEBR', 'NORC']
     },
     {
         id: 'GT3',
         bgColor: '#258278',
-        tracks: ['ROAM', 'MOTE', 'RATL', 'LAGU', 'SNET', 'BARC', 'OSCH', 'COTA', 'SUZU', 'RUDS', 'INDY', 'REDB']
+        tracks: ['MONZ', 'BRAN', 'SPAF', 'SILV', 'DAYT', 'RUDS', 'MAGN', 'CARL', 'MOPA', 'SONO', 'OKAY', 'LEMA']
     },
     {
         id: 'GT4',
         bgColor: '#615299',
-        tracks: ['OKAY', 'DAYT', 'BARN', 'RATL', 'OSCH', 'SEBR', 'SAND', 'NORC', 'MIDO', 'ROAM', 'RUDS', 'LAGU']
+        tracks: ['ORAN', 'RATL', 'OSCH', 'DAYT', 'MAGN', 'MOPA', 'FUJI', 'BRAN', 'TSUK', 'SEBR', 'NURB', 'ROAM']
     },
     {
         id: 'TCR',
         bgColor: '#000000',
-        tracks: ['SPAF', 'DAYT', 'OSCH', 'RATL', 'DONN', 'SEBR', 'OULT', 'NORC', 'RUDS', 'ROAM', 'REDB', 'LAGU']
-    },
-    {
-        id: 'EURO',
-        bgColor: '#5e6061',
-        tracks: ['NORC', 'SPAF', 'COTA', 'ROAM', 'WATC', 'SILV', 'DAYT', 'MONZ', 'REDB', 'LEMA', 'SEBR', 'FUJI']
-    },
-    {
-        id: 'SR10',
-        bgColor: '#f6c919',
-        tracks: ['SPAF', 'OKAY', 'CARL', 'LEMA', 'WATB', 'MIDO', 'FUJI', 'ROAM', 'MONZ', 'CANT', 'MOPA', 'NORD']
-    },
-    {
-        id: 'LMP2',
-        bgColor: '#3ed003',
-        tracks: ['INDY', 'LAGU', 'CANT', 'RATL', 'HOCK', 'FUJI', 'SEBR', 'SUZU', 'ROAM', 'CHAR', 'IMOL', 'DAYT']
+        tracks: ['CARL', 'RATL', 'IMOL', 'DAYT', 'DONN', 'MOPA', 'MAGN', 'BRAN', 'OKAY', 'SEBR', 'RUDS', 'ROAM']
     }
 ];
 
 const weeks = [
-    'Sep 13', 'Sep 20', 'Sep 27', 'Oct 04',
-    'Oct 11', 'Oct 18', 'Oct 25', 'Nov 01',
-    'Nov 08', 'Nov 15', 'Nov 22', 'Nov 29'
+    'Dec 13', 'Dec 20', 'Dec 27', 'Jan 03',
+    'Jan 10', 'Jan 17', 'Jan 24', 'Jan 31',
+    'Feb 07', 'Feb 14', 'Feb 21', 'Feb 28'
 ]
 
 function buildTable() {
