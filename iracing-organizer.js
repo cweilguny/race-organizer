@@ -45,6 +45,9 @@ const tracks = {
     'NURB': 'Nürburgring',
     'VIRG': 'Virginia International Raceway',
     'LIME': 'Lime Rock Park',
+    'LONG': 'Long Beach Street Circuit',
+    'GIVI': 'Circuit Gilles Villeneuve',
+    'HUNG': 'Hungaroring',
     'SUMM': 'Summit Point Raceway'
 };
 
@@ -73,8 +76,12 @@ const series = [
         id: 'GR86',
         bgColor: '#ff6517',
         tracks: ['VIRG', 'OKAY', 'LIME', 'MAGN', 'LAGU', 'SUMM', 'FUJI', 'TSUK', 'OSCH', 'OULT', 'ROAM', 'RUDS']
+    },
+    {
+        id: 'iR-04',
+        bgColor: '#672302',
+        tracks: ['RUDS', 'LONG', 'MONZ', 'MOPA', 'BARC', 'OKAY', 'RATL', 'GIVI', 'SILV', 'OULT', 'ROAM', 'HUNG']
     }
-
 ];
 
 const weeks = [
