@@ -42,7 +42,10 @@ const tracks = {
     'SONO': 'Sonoma Raceway',
     'ORAN': 'Oran Park Raceway',
     'TSUK': 'Tsukuba Circuit',
-    'NURB': 'Nürburgring'
+    'NURB': 'Nürburgring',
+    'VIRG': 'Virginia International Raceway',
+    'LIME': 'Lime Rock Park',
+    'SUMM': 'Summit Point Raceway'
 };
 
 const series = [
@@ -65,7 +68,13 @@ const series = [
         id: 'TCR',
         bgColor: '#000000',
         tracks: ['CARL', 'RATL', 'IMOL', 'DAYT', 'DONN', 'MOPA', 'MAGN', 'BRAN', 'OKAY', 'SEBR', 'RUDS', 'ROAM']
+    },
+    {
+        id: 'GR86',
+        bgColor: '#ff6517',
+        tracks: ['VIRG', 'OKAY', 'LIME', 'MAGN', 'LAGU', 'SUMM', 'FUJI', 'TSUK', 'OSCH', 'OULT', 'ROAM', 'RUDS']
     }
+
 ];
 
 const weeks = [
