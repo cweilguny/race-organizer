@@ -68,6 +68,11 @@ const series = [
         tracks: ['ORAN', 'RATL', 'OSCH', 'DAYT', 'MAGN', 'MOPA', 'FUJI', 'BRAN', 'TSUK', 'SEBR', 'NURB', 'ROAM']
     },
     {
+        id: 'IMSA',
+        bgColor: '#373839',
+        tracks: ['CARL', 'BARH', 'WATB', 'INDY', 'MAGN', 'DAYT', 'LONG', 'VIRG', 'NURB', 'ROAM', 'DETR', 'SEBR']
+    },
+    {
         id: 'TCR',
         bgColor: '#000000',
         tracks: ['CARL', 'RATL', 'IMOL', 'DAYT', 'DONN', 'MOPA', 'MAGN', 'BRAN', 'OKAY', 'SEBR', 'RUDS', 'ROAM']
