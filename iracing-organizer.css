@@ -1,31 +1,33 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #111111;
+    background: #0e0e0e;
 }
 
 .week-inner {
+    position: relative;
     margin: 10px;
-    padding: 0 0 10px 0;
-    border-radius: 10px;
-    background: #222222;
-    box-shadow: 0 0 7px #666666;
+    padding: 5px 0;
+    background: #1a1a1a;
+    border: 1px solid #444444;
 }
 
-.week-description {
-    margin-bottom: 7px;
-    padding: 1px 7px;
-    color: #e32d30;
-    font-size: 16px;
+.week-number {
+    position: absolute;
+    right: 35px;
     font-weight: bold;
-    border-radius: 10px 10px 0 0;
-    background: #999999;
+    line-height: 64px;
+    font-size: 64px;
+    color: #362b8c;
 }
 
-.week-date, .week-number {
-    display: inline-block;
-    border-radius: 3px;
-    padding: 2px 5px;
-    color: #362b8c;
+.week-date {
+    position: absolute;
+    top: 28px;
+    right: -2px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #e32d30;
+    transform: rotate(90deg);
 }
 
 .serie-line {
@@ -41,11 +43,21 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 .track-name {
     font-size: 14px;
     color: #eeeeee;
     font-weight: bold;
+}
+
+@media print {
+    @page { margin: 0; }
+
+    body {
+        background: none;
+        margin: 3cm;
+        zoom: 60%;
+    }
 }
