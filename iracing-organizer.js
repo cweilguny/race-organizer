@@ -75,7 +75,7 @@ const series = [
     {
         id: 'IMSP',
         bgColor: '#045ca8',
-        tracks: ['RATL', 'RATL', 'DAYT', 'DAYT', 'MOPA', 'MOPA', 'BRAN', 'BRAN', 'SEBR', 'SEBR', 'ROAM', 'ROAM']
+        tracks: ['', 'RATL', '', 'DAYT', '', 'MOPA', '', 'BRAN', '', 'SEBR', '', 'ROAM']
     },
     {
         id: 'iR-04',
@@ -118,7 +118,7 @@ function weekSeriesHtml(week, serie, track) {
     let html = '';
     html += '<div id="W' + week + '-' + serie.id + '" class="serie-line">';
     html += '<span class="serie-name" style="background-color: ' + serie.bgColor + '">' + serie.id + '</span>';
-    html += '<span class="track-name">' + tracks[track] + '</span>';
+    html += '<span class="track-name">' + (tracks[track] || track) + '</span>';
     html += '</div>'
     return html;
 }
