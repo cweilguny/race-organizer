@@ -12,7 +12,7 @@ body {
 }
 
 .week-inner.current-week {
-    background: #444444;
+    border: 1px solid #e32d30;
 }
 
 .week-number {
