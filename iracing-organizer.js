@@ -85,10 +85,10 @@ const series = [
 ];
 
 const weeks = [
-    'Dec 13', 'Dec 20', 'Dec 27', 'Jan 03',
-    'Jan 10', 'Jan 17', 'Jan 24', 'Jan 31',
-    'Feb 07', 'Feb 14', 'Feb 21', 'Feb 28'
-]
+    '2022-12-13', '2022-12-20', '2022-12-27', '2023-01-03',
+    '2023-01-10', '2023-01-17', '2023-01-24', '2023-01-31',
+    '2023-02-07', '2023-02-14', '2023-02-21', '2023-02-28'
+];
 
 function buildTable() {
     for (let i = 1; i <= 12; i++) {
@@ -103,15 +103,27 @@ function buildTable() {
 
 function weekHtml(week) {
     let html = '';
-    html += '<div class="week col-sm-6 col-md-6 col-lg-3 px-0"><div id="week' + week + '" class="week-inner">';
+    const currentWeekClass = isCurrentWeek(weeks[week - 1]) ? ' current-week' : '';
+    html += '<div class="week col-sm-6 col-md-6 col-lg-3 px-0"><div id="week' + week + '" class="week-inner' + currentWeekClass + '">';
     html += '   <div class="week-description">';
     html += '       <span class="week-number">' + week + '</span>';
-    html += '       <span class="week-date">' + weeks[week - 1] + '</span>';
+    html += '       <span class="week-date">' + monthName(weeks[week - 1]) + '</span>';
     html += '   </div>';
     html += '<div class="clearfix"></div>';
     html += '</div></div>';
     return html;
 
+}
+
+function isCurrentWeek(dateString) {
+    const now = new Date();
+    const weekStart = new Date(dateString);
+    return now >= weekStart && now.getTime() < (weekStart.getTime() + 7 * 24 * 3600 * 1000);
+}
+
+function monthName(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleString('default', { month: 'short' }) + ' ' + date.toLocaleString('default', { day: '2-digit' });
 }
 
 function weekSeriesHtml(week, serie, track) {

@@ -11,6 +11,10 @@ body {
     border: 1px solid #444444;
 }
 
+.week-inner.current-week {
+    background: #444444;
+}
+
 .week-number {
     position: absolute;
     right: 35px;
