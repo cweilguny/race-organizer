@@ -48,7 +48,8 @@ const tracks = {
     'LONG': 'Long Beach Street Circuit',
     'GIVI': 'Circuit Gilles Villeneuve',
     'HUNG': 'Hungaroring',
-    'SUMM': 'Summit Point Raceway'
+    'SUMM': 'Summit Point Raceway',
+    'MISA': 'Misano'
 };
 
 const series = [
@@ -81,6 +82,11 @@ const series = [
         id: 'iR-04',
         bgColor: '#672302',
         tracks: ['RUDS', 'LONG', 'MONZ', 'MOPA', 'BARC', 'OKAY', 'RATL', 'GIVI', 'SILV', 'OULT', 'ROAM', 'HUNG']
+    },
+    {
+        id: 'LFM',
+        bgColor: '#000000',
+        tracks: ['', '', '', '', '', '', '', '', '', 'MISA', 'INDY', 'HUNG']
     }
 ];
 
