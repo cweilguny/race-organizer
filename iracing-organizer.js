@@ -1,3 +1,5 @@
+const seasonStart = '2022-12-13';
+
 const tracks = {
     'OKAY': 'Okayama',
     'DAYT': 'Daytona',
@@ -90,12 +92,6 @@ const series = [
     }
 ];
 
-const weeks = [
-    '2022-12-13', '2022-12-20', '2022-12-27', '2023-01-03',
-    '2023-01-10', '2023-01-17', '2023-01-24', '2023-01-31',
-    '2023-02-07', '2023-02-14', '2023-02-21', '2023-02-28'
-];
-
 function buildTable() {
     for (let i = 1; i <= 12; i++) {
         $('#content').append(weekHtml(i));
@@ -109,11 +105,12 @@ function buildTable() {
 
 function weekHtml(week) {
     let html = '';
-    const currentWeekClass = isCurrentWeek(weeks[week - 1]) ? ' current-week' : '';
+    const weekStart = calcWeekStart(week);
+    const currentWeekClass = isCurrentWeek(weekStart) ? ' current-week' : '';
     html += '<div class="week col-sm-6 col-md-6 col-lg-3 px-0"><div id="week' + week + '" class="week-inner' + currentWeekClass + '">';
     html += '   <div class="week-description">';
     html += '       <span class="week-number">' + week + '</span>';
-    html += '       <span class="week-date">' + monthName(weeks[week - 1]) + '</span>';
+    html += '       <span class="week-date">' + monthName(weekStart) + '</span>';
     html += '   </div>';
     html += '<div class="clearfix"></div>';
     html += '</div></div>';
@@ -121,14 +118,18 @@ function weekHtml(week) {
 
 }
 
-function isCurrentWeek(dateString) {
+function calcWeekStart(week) {
+    const firstWeek = new Date(seasonStart);
+    firstWeek.setDate(firstWeek.getDate() + (week - 1) * 7);
+    return firstWeek;
+}
+
+function isCurrentWeek(weekStart) {
     const now = new Date();
-    const weekStart = new Date(dateString);
     return now >= weekStart && now.getTime() < (weekStart.getTime() + 7 * 24 * 3600 * 1000);
 }
 
-function monthName(dateString) {
-    const date = new Date(dateString);
+function monthName(date) {
     return date.toLocaleString('default', { month: 'short' }) + ' ' + date.toLocaleString('default', { day: '2-digit' });
 }
 
