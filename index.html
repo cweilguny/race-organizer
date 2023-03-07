@@ -17,7 +17,7 @@
         const seasonStart = '2022-12-13';
 
         const tracks = {
-            'CARL': 'Autódromo José Carlos Pace',
+            'BARB': 'Barber Motorsports Park',
             'BARC': 'Barcelona',
             'BARH': 'Barcelona (Historic)',
             'BARN': 'Barcelona (National)',
@@ -28,12 +28,15 @@
             'COTA': 'Circuit of the Americas',
             'DAYT': 'Daytona',
             'DETR': 'Detroit Grand Prix at Belle Isle',
+            'DONI': 'Donington',
             'DONN': 'Donington (National)',
             'FUJI': 'Fuji',
             'HOCK': 'Hockenheim',
             'HUNG': 'Hungaroring',
             'IMOL': 'Imola',
             'INDY': 'Indianapolis',
+            'INLA': 'Interlagos',
+            'JERE': 'Jerez',
             'LAGU': 'Laguna Seca',
             'LEMA': 'Le Mans',
             'LIME': 'Lime Rock Park',
@@ -67,6 +70,8 @@
             'VIRG': 'Virginia International Raceway',
             'WATB': 'Watkins Glen',
             'WATC': 'Watkins Glen Classic Boot',
+            'ZAND': 'Zandvoort',
+            'ZOLD': 'Zolder',
         };
 
         const series = [
@@ -74,37 +79,55 @@
                 id: 'PCUP',
                 bgColor: '#25395e',
                 url: 'https://www.iracing.com/series/porsche-iracing-cup/',
-                tracks: ['OULT', 'CARL', 'CANT', 'MAGN', 'HOCK', 'SILV', 'RUDS', 'DETR', 'ROAM', 'BARH', 'SEBR', 'NORC']
+                tracks: ['BRAN', 'VIRG', 'MONZ', 'ZOLD', 'SPAF', 'SEBR', 'LEMA', 'SILV', 'NORC', 'SUZU', 'MAGN', 'LONG']
             },
             {
                 id: 'GT3',
                 bgColor: '#258278',
                 url: 'https://www.iracing.com/series/gt-sprint-series/',
-                tracks: ['MONZ', 'BRAN', 'SPAF', 'SILV', 'DAYT', 'RUDS', 'MAGN', 'CARL', 'MOPA', 'SONO', 'OKAY', 'LEMA']
+                tracks: ['SEBR', 'IMOL', 'REDB', 'DONI', 'DETR', 'NORC', 'JERE', 'ROAM', 'ZAND', 'HOCK', 'WATB', 'NURB']
             },
             {
                 id: 'GT4',
                 bgColor: '#615299',
                 url: 'https://www.iracing.com/series/gt4-falken-tyre-challenge/',
-                tracks: ['ORAN', 'RATL', 'OSCH', 'DAYT', 'MAGN', 'MOPA', 'FUJI', 'BRAN', 'TSUK', 'SEBR', 'NURB', 'ROAM']
+                tracks: ['CHAR', 'SEBR', 'BARB', 'MIDO', 'REDB', 'GIVI', 'INDY', 'NORC', 'MAGN', 'LAGU', 'DETR', 'SPAF']
             },
             {
                 id: 'IMSA',
                 bgColor: '#373839',
                 url: 'https://www.iracing.com/series/imsa-series/',
-                tracks: ['CARL', 'BARH', 'WATB', 'INDY', 'MAGN', 'DAYT', 'LONG', 'VIRG', 'NURB', 'ROAM', 'DETR', 'SEBR']
+                tracks: ['RATL', 'SEBR', 'MAGN', 'VIRG', 'LONG', 'HUNG', 'BARB', 'CANT', 'LAGU', 'OKAY', 'ROAM', 'DAYT']
             },
             {
                 id: 'IMSP',
                 bgColor: '#045ca8',
                 url: 'https://www.iracing.com/series/iracing-imsa-michelin-pilot-challenge/',
-                tracks: ['', 'RATL', '', 'DAYT', '', 'MOPA', '', 'BRAN', '', 'SEBR', '', 'ROAM']
+                tracks: ['', 'SEBR', '', 'MIDO', '', 'GIVI', '', 'NORC', '', 'LAGU', '', 'SPAF']
+            },
+            {
+                id: 'GR86',
+                bgColor: '#ff6517',
+                url: 'https://www.iracing.com/series/gr-cup-fixed/',
+                tracks: ['ZOLD', 'LIME', 'RUDS', 'MOTE', 'OULT', 'VIRG', 'SPAF', 'JERE', 'OKAY', 'ZAND', 'LAGU', 'TSUK']
+            },
+            {
+                id: 'CLIO',
+                bgColor: '#626262',
+                url: 'https://www.iracing.com/series/iracing-clio-cup/',
+                tracks: ['SPAF', 'OKAY', 'MONZ', 'VIRG', 'JERE', 'TSUK', 'LAGU', 'REDB', 'RUDS', 'LIME', 'OULT', 'SUMM']
+            },
+            {
+                id: 'F3',
+                bgColor: '#cea403',
+                url: 'https://www.iracing.com/series/f3-championship/',
+                tracks: ['INLA', 'CANT', 'HOCK', 'DETR', 'MAGN', 'BRAN', 'HUNG', 'DONN', 'IMOL', 'MOTE', 'RUDS', 'SILV']
             },
             {
                 id: 'iR-04',
                 bgColor: '#672302',
-                url: 'https://www.iracing.com/cars/iracing-formula-ir-04/',
-                tracks: ['RUDS', 'LONG', 'MONZ', 'MOPA', 'BARC', 'OKAY', 'RATL', 'GIVI', 'SILV', 'OULT', 'ROAM', 'HUNG']
+                url: 'https://www.iracing.com/series/formula-ir-04-challenge/',
+                tracks: ['VIRG', 'REDB', 'GIVI', 'BARC', 'RUDS', 'FUJI', 'MONZ', 'LONG', 'ORAN', 'COTA', 'ROAM', 'WATB']
             }
         ];
 
@@ -152,7 +175,7 @@
         function weekSeriesHtml(week, serie, track) {
             let html = '';
             html += '<div id="W' + week + '-' + serie.id + '" class="serie-line">';
-            html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + serie.url + '" target="_blank">' + serie.id + '</a>';
+            html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
             html += '<span class="track-name">' + (tracks[track] || track) + '</span>';
             html += '</div>'
             return html;
