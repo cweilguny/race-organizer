@@ -16,7 +16,7 @@
     <script type="text/javascript">
         const seasonStart = '2023-06-13';
 
-        const tracks = {
+        const trackNames = {
             'BARB': 'Barber Motorsports Park',
             'BARC': 'Barcelona',
             'BARH': 'Barcelona (Historic)',
@@ -81,6 +81,21 @@
             'ZOLD': 'Zolder',
         };
 
+        const carNames = {
+            'AMV4': 'Aston Martin Vantage GT4',
+            'BMW3': 'BMW M4 GT3',
+            'BMW4': 'BMW M4 GT4',
+            'FEF3': 'Ferrari 488 GT3 EVO',
+            'CIVI': 'Honda Civic',
+            'ELAN': 'Hyundai Elantra',
+            'AMG3': 'Mercedes-AMG GT3 2020',
+            'POR4': 'Porsche 718 Cayman GT4',
+            'POR3': 'Porsche 911 GT3 R',
+            'RAYF': 'Ray FF1600',
+            'CLIO': 'Renault Clio',
+            'GR86': 'Toyota GR86',
+        };
+
         const series = [
             {
                 id: 'IMSA',
@@ -99,6 +114,12 @@
                 bgColor: '#258278',
                 url: 'https://www.iracing.com/series/gt-sprint-series/',
                 tracks: ['LIME', 'FUJI', 'DAYT', 'ARAG', 'VIRG', 'SPAF', 'ZOLD', 'RATL', 'BARH', 'LEMA', 'PHIL', 'MOPA']
+            },
+            {
+                id: 'RING',
+                bgColor: '#cd2427',
+                url: 'https://www.iracing.com/series/ring-meister-series/',
+                cars: ['AMG3', 'POR4', 'ELAN', 'GR86', 'FEF3', 'BMW4', 'CIVI', 'RAYF', 'POR3', 'AMV4', 'CLIO', 'BMW3']
             },
             {
                 id: 'IMSP',
@@ -143,8 +164,9 @@
                 $('#content').append(weekHtml(i));
             }
             series.forEach(serie => {
-                serie.tracks.forEach((track, i) => {
-                    $('#week' + (i + 1)).append(weekSeriesHtml(i + 1, serie, track));
+                const entries = serie.cars || serie.tracks;
+                entries.forEach((entry, i) => {
+                    $('#week' + (i + 1)).append(weekSeriesHtml(i + 1, serie, entry));
                 })
             });
         }
@@ -179,12 +201,13 @@
             return date.toLocaleString('default', { month: 'short' }) + ' ' + date.toLocaleString('default', { day: '2-digit' });
         }
 
-        function weekSeriesHtml(week, serie, track) {
+        function weekSeriesHtml(week, serie, entry) {
+            const entryName = !!serie.cars ? carNames[entry] : trackNames[entry];
             let html = '';
             html += '<div id="W' + week + '-' + serie.id + '" class="serie-line">';
             html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
-            html += '<span class="track-name">' + (tracks[track] || track) + '</span>';
-            html += '</div>'
+            html += '<span class="entry-name">' + entryName + '</span>';
+            html += '</div>';
             return html;
         }
 
@@ -252,7 +275,7 @@
             outline: 1px solid #ffffff;
         }
 
-        .track-name {
+        .entry-name {
             font-size: 14px;
             color: #eeeeee;
             font-weight: bold;
