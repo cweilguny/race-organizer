@@ -202,7 +202,7 @@
         }
 
         function weekSeriesHtml(week, serie, entry) {
-            const entryName = !!serie.cars ? carNames[entry] : trackNames[entry];
+            const entryName = (!!serie.cars ? carNames[entry] : trackNames[entry]) || '';
             let html = '';
             html += '<div id="W' + week + '-' + serie.id + '" class="serie-line">';
             html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
