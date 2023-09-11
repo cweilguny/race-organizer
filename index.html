@@ -14,7 +14,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script type="text/javascript">
-        const seasonStart = '2023-06-13';
+        const seasonStart = '2023-09-12';
 
         const trackNames = {
             'BARB': 'Barber Motorsports Park',
@@ -41,6 +41,7 @@
             'JERM': 'Jerez Moto',
             'KNOC': 'Knockhill Racing Circuit',
             'LAGU': 'Laguna Seca',
+            'LEDE': 'Lédenon',
             'LEMA': 'Le Mans',
             'LIME': 'Lime Rock Park',
             'LONG': 'Long Beach Street Circuit',
@@ -85,15 +86,22 @@
             'AMV4': 'Aston Martin Vantage GT4',
             'BMW3': 'BMW M4 GT3',
             'BMW4': 'BMW M4 GT4',
-            'FEF3': 'Ferrari 488 GT3 EVO',
+            'FEF3': 'Ferrari 296 GT3',
+            'FOMU': 'Ford Mustang FR500',
             'CIVI': 'Honda Civic',
             'ELAN': 'Hyundai Elantra',
+            'LO49': 'Lotus 49',
             'AMG3': 'Mercedes-AMG GT3 2020',
             'POR4': 'Porsche 718 Cayman GT4',
             'POR3': 'Porsche 911 GT3 R',
+            'PORE': 'Porsche 911 RSR GTE',
+            'SR10': 'Radical SR10',
             'RAYF': 'Ray FF1600',
             'CLIO': 'Renault Clio',
+            'SPEF': 'Spec Racer Ford',
+            'STST': 'Street Stock',
             'GR86': 'Toyota GR86',
+            'JETT': 'VW Jetta',
         };
 
         const series = [
@@ -101,67 +109,73 @@
                 id: 'IMSA',
                 bgColor: '#373839',
                 url: 'https://www.iracing.com/series/imsa-series/',
-                tracks: ['WATB', 'INDY', 'JERM', 'CANT', 'SPAF', 'LIME', 'GIVI', 'ROAM', 'COTA', 'ARAG', 'VIRG', 'DAYT']
+                tracks: ['INDY', 'FUJI', 'SPAF', 'RATL', 'WATB', 'LEMA', 'SEBR', 'MONZ', 'ROAM', 'REDB', 'DAYT', 'SILV']
+            },
+            {
+                id: 'GTE',
+                bgColor: '#1b213e',
+                url: 'https://www.iracing.com/series/gte-sprint-series/',
+                tracks: ['DAYT', 'ROAM', 'INLA', 'LEMA', 'WATB', 'SPAF', 'BARH', 'MOPA', 'MONZ', 'NORC', 'RATL', 'SEBR']
+            },
+            {
+                id: 'GT3',
+                bgColor: '#ca301f',
+                url: 'https://www.iracing.com/series/gt-sprint-series/',
+                tracks: ['MONZ', 'SEBR', 'HUNG', 'LAGU', 'JERE', 'ROAM', 'INLA', 'LEDE', 'FUJI', 'WATB', 'MAGN', 'NORC']
             },
             {
                 id: 'GT4',
                 bgColor: '#615299',
                 url: 'https://www.iracing.com/series/gt4-falken-tyre-challenge/',
-                tracks: ['OULT', 'WATB', 'LONG', 'CANT', 'ZAND', 'NURB', 'JERM', 'ROAM', 'WILL', 'VIRG', 'ARAG', 'SUZU']
-            },
-            {
-                id: 'GT3',
-                bgColor: '#258278',
-                url: 'https://www.iracing.com/series/gt-sprint-series/',
-                tracks: ['LIME', 'FUJI', 'DAYT', 'ARAG', 'VIRG', 'SPAF', 'ZOLD', 'RATL', 'BARH', 'LEMA', 'PHIL', 'MOPA']
+                tracks: ['LEMA', 'INDY', 'PHIL', 'RATL', 'IMOL', 'COTA', 'FUJI', 'DONN', 'ZAND', 'INLA', 'LEDE', 'REDB']
             },
             {
                 id: 'RING',
-                bgColor: '#cd2427',
+                bgColor: '#3d0f15',
                 url: 'https://www.iracing.com/series/ring-meister-series/',
-                cars: ['AMG3', 'POR4', 'ELAN', 'GR86', 'FEF3', 'BMW4', 'CIVI', 'RAYF', 'POR3', 'AMV4', 'CLIO', 'BMW3']
+                cars: ['FOMU', 'BMW3', 'SPEF', 'STST', 'FEF3', 'AMV4', 'JETT', 'SR10', 'PORE', 'AMG3', 'GR86', 'LO49']
             },
             {
                 id: 'TCR',
                 bgColor: '#000000',
                 url: 'https://www.iracing.com/series/touring-car-challenge/',
-                tracks: ['LIME', 'WATB', 'DAYT', 'CANT', 'KNOC', 'NURB', 'FUJI', 'ROAM', 'OKAY', 'VIRG', 'HOCK', 'SUZU']
+                tracks: ['OULT', 'INDY', 'SPAF', 'RATL', 'NORC', 'COTA', 'LAGU', 'DONN', 'SUMM', 'INLA', 'BARH', 'REDB']
             },
             {
                 id: 'IMSP',
                 bgColor: '#045ca8',
                 url: 'https://www.iracing.com/series/iracing-imsa-michelin-pilot-challenge/',
-                tracks: ['', 'WATB', '', 'CANT', '', 'NURB', '', 'ROAM', '', 'VIRG', '', 'SUZU']
+                tracks: ['', 'INDY', '', 'RATL', '', 'COTA', '', 'DONN', '', 'INLA', '', 'REDB']
             },
             {
                 id: 'PCUP',
                 bgColor: '#25395e',
                 url: 'https://www.iracing.com/series/porsche-iracing-cup/',
-                tracks: ['CHIC', 'MOPA', 'RATL', 'SPAF', 'WATI', 'DONI', 'VIRG', 'JERM', 'ROAM', 'GIVI', 'SILV', 'SUZU']
+                tracks: ['WILL', 'LAGU', 'INLA', 'JERE', 'COTA', 'DETR', 'ARAG', 'MOPA', 'WATC', 'NORD', 'IMOL', 'RATL']
             },
             {
                 id: 'GR86',
                 bgColor: '#ff6517',
                 url: 'https://www.iracing.com/series/gr-cup-fixed/',
-                tracks: ['VIRG', 'ZOLD', 'JERM', 'PHIL', 'OKAY', 'KNOC', 'LONG', 'ROAM', 'BRAN', 'ZAND', 'SPAF', 'LAGU']
+                tracks: ['LAGU', 'OKAY', 'REDB', 'RUDS', 'KNOC', 'VIRG', 'WILL', 'CANT', 'WATI', 'BRAN', 'LONG', 'PHIL']
             },
             {
                 id: 'CLIO',
                 bgColor: '#626262',
                 url: 'https://www.iracing.com/series/iracing-clio-cup/',
-                tracks: ['OKAY', 'CHAR', 'ZOLD', 'REDB', 'SUMM', 'BARN', 'LIME', 'RATL', 'BRAN', 'OULT', 'WATB', 'VIRG']
+                tracks: ['LAGU', 'OKAY', 'SEBR', 'RUDS', 'LIME', 'VIRG', 'WILL', 'IMOL', 'TSUK', 'BRAN', 'SUMM', 'OULT']
             },
             {
                 id: 'F3',
                 bgColor: '#cea403',
                 url: 'https://www.iracing.com/series/f3-championship/',
-                tracks: ['ROAM', 'VIRG', 'BARH', 'CANT', 'JERE', 'HUNG', 'ARAG', 'DONI', 'NURB', 'DETR', 'LAGU', 'MONZ']
+                tracks: ['SPAF', 'SUZU', 'MOPA', 'RATL', 'REDB', 'ARAG', 'VIRG', 'GIVI', 'SEBR', 'DETR', 'LAGU', 'WATB']
             },
             {
                 id: 'F4',
                 bgColor: '#672302',
                 url: 'https://www.iracing.com/series/fia-formula-4-challenge/',
-                tracks: ['VIRG', 'FUJI', 'IMOL', 'WATB', 'LAGU', 'REDB', 'COTA', 'SPAF', 'OULT', 'ROAM', 'SUZU', 'INLA']
+                tracks: ['OKAY', 'INLA', 'HUNG', 'ZAND', 'LIME', 'SUZU', 'WATB', 'SPAF', 'NURB', 'SUMM', 'IMOL', 'SILV']
             }
         ];
 
