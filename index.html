@@ -14,6 +14,8 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script type="text/javascript">
+        const deactivatedSeries = JSON.parse(localStorage.getItem('deactivatedSeries')) || {};
+
         const seasonStart = '2023-09-12';
 
         const trackNames = {
@@ -217,16 +219,68 @@
 
         function weekSeriesHtml(week, serie, entry) {
             const entryName = (!!serie.cars ? carNames[entry] : trackNames[entry]) || '';
+            const hiddenClass = deactivatedSeries.hasOwnProperty(serie.id) ? ' hidden' : '';
             let html = '';
-            html += '<div id="W' + week + '-' + serie.id + '" class="serie-line">';
+            html += '<div id="W' + week + '-' + serie.id + '" class="serie-line' + hiddenClass + '" data-is="serie-line" data-serie-id="' + serie.id + '">';
             html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
             html += '<span class="entry-name">' + entryName + '</span>';
             html += '</div>';
             return html;
         }
 
+        function buildFilter() {
+            $('#content').append(filterHtml());
+            $('#filter .serie-name').click(function() {
+                filterClickHandler($(this));
+            });
+            $('#filter .filter-bar-handle').click(function() {
+                filterBarHandleClickHandler($(this));
+            })
+        }
+
+        function filterHtml() {
+            let html = '';
+            const filterBarClass = localStorage.getItem('filterIsClosed') ? 'closed' : 'open';
+            html += '<div id="filter" class="' + filterBarClass + '">'
+            html += '<a class="filter-bar-handle"></a>';
+            html += '<span id="filter-series-buttons">';
+            series.forEach(serie => {
+                const deactivatedClass = deactivatedSeries.hasOwnProperty(serie.id) ? ' deactivated' : '';
+                html += '<a class="serie-name' + deactivatedClass + '" style="background-color: ' + serie.bgColor + '" data-serie-id="' + serie.id + '">' + serie.id + '</a>';
+            });
+            html += '</span>';
+            html += '</div>';
+            return html;
+        }
+
+        function filterClickHandler($filterElement) {
+            const serieId = $filterElement.data('serie-id');
+            if (deactivatedSeries.hasOwnProperty(serieId)) {
+                delete deactivatedSeries[serieId];
+                $filterElement.removeClass('deactivated');
+                $('[data-is="serie-line"][data-serie-id=' + serieId + ']').removeClass('hidden');
+            } else {
+                deactivatedSeries[serieId] = true;
+                $filterElement.addClass('deactivated');
+                $('[data-is="serie-line"][data-serie-id=' + serieId + ']').addClass('hidden');
+            }
+            localStorage.setItem('deactivatedSeries', JSON.stringify(deactivatedSeries));
+        }
+
+        function filterBarHandleClickHandler() {
+            const $filter = $('#filter');
+            if ($filter.hasClass('closed')) {
+                $filter.removeClass('closed');
+                localStorage.removeItem('filterIsClosed');
+            } else {
+                $filter.addClass('closed');
+                localStorage.setItem('filterIsClosed', 1);
+            }
+        }
+
         $(() => {
             buildTable();
+            buildFilter();
         });
     </script>
 
@@ -242,6 +296,7 @@
             padding: 5px 0;
             background: #1a1a1a;
             border: 1px solid #444444;
+            min-height: 84px;
         }
 
         .week-inner.current-week {
@@ -272,6 +327,10 @@
             line-height: 25px;
         }
 
+        .serie-line.hidden {
+            display: none;
+        }
+
         .serie-name {
             margin-right: 10px;
             display: inline-block;
@@ -295,6 +354,49 @@
             font-weight: bold;
         }
 
+        #filter {
+            margin-top: 50px;
+            text-align: right;
+        }
+
+        #filter .filter-bar-handle {
+            display: inline-block;
+            width: 40px;
+            cursor: pointer;
+            text-align: center;
+            background-color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            color: #777;
+            font-size: 14px;
+        }
+
+        #filter.closed #filter-series-buttons {
+            display: none;
+        }
+
+        #filter .filter-bar-handle::before {
+            content: '»';
+        }
+
+        #filter.closed .filter-bar-handle::before {
+            content: '«';
+        }
+
+        #filter .serie-name {
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+
+        #filter .serie-name.deactivated {
+            opacity: 20%;
+        }
+
+        #filter .serie-name.deactivated:hover {
+            opacity: 60%;
+        }
+
         @media print {
             @page { margin: 0; }
 
@@ -302,6 +404,10 @@
                 background: none;
                 margin: 3cm;
                 zoom: 55%;
+            }
+
+            #filter {
+                display: none;
             }
         }
 
