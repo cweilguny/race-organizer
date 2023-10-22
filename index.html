@@ -128,7 +128,8 @@
             },
             {
                 id: 'FEFE',
-                bgColor: '#c5bb0a',
+                bgColor: '#fdef02',
+                textColor: '#000000',
                 url: 'https://www.iracing.com/series/ferrari-gt3-challenge/',
                 tracks: ['ZAND', 'SPAF', 'LEDE', 'RATL', 'ARAG', 'SUMM', 'CHAR', 'WATC', 'RUDS', 'VIRG', 'LONG', 'OKAY']
             },
@@ -235,7 +236,7 @@
             const hiddenClass = deactivatedSeries.hasOwnProperty(serie.id) ? ' hidden' : '';
             let html = '';
             html += '<div id="W' + week + '-' + serie.id + '" class="serie-line' + hiddenClass + '" data-is="serie-line" data-serie-id="' + serie.id + '">';
-            html += '<a class="serie-name" style="background-color: ' + serie.bgColor + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
+            html += '<a class="serie-name" style="background-color: ' + serie.bgColor + ';' + getTextColorCssString(serie) + '" href="' + (serie.url || '#') + '" target="_blank">' + serie.id + '</a>';
             html += '<span class="entry-name">' + entryName + '</span>';
             html += '</div>';
             return html;
@@ -259,11 +260,15 @@
             html += '<span id="filter-series-buttons">';
             series.forEach(serie => {
                 const deactivatedClass = deactivatedSeries.hasOwnProperty(serie.id) ? ' deactivated' : '';
-                html += '<a class="serie-name' + deactivatedClass + '" style="background-color: ' + serie.bgColor + '" data-serie-id="' + serie.id + '">' + serie.id + '</a>';
+                html += '<a class="serie-name' + deactivatedClass + '" style="background-color: ' + serie.bgColor + ';' + getTextColorCssString(serie) + '" data-serie-id="' + serie.id + '">' + serie.id + '</a>';
             });
             html += '</span>';
             html += '</div>';
             return html;
+        }
+
+        function getTextColorCssString(serie) {
+            return serie.hasOwnProperty('textColor') ? 'color: ' + serie.textColor : '';
         }
 
         function filterClickHandler($filterElement) {
