@@ -319,11 +319,11 @@
             if (deactivatedSeries.hasOwnProperty(serieId)) {
                 delete deactivatedSeries[serieId];
                 $filterElement.removeClass('deactivated');
-                $('[data-is="serie-line"][data-serie-id=' + serieId + ']').removeClass('hidden');
+                $('[data-is="serie-line"][data-serie-id="' + serieId + '"]').removeClass('hidden');
             } else {
                 deactivatedSeries[serieId] = true;
                 $filterElement.addClass('deactivated');
-                $('[data-is="serie-line"][data-serie-id=' + serieId + ']').addClass('hidden');
+                $('[data-is="serie-line"][data-serie-id="' + serieId + '"]').addClass('hidden');
             }
             localStorage.setItem('deactivatedSeries', JSON.stringify(deactivatedSeries));
         }
