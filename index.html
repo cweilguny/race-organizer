@@ -19,6 +19,7 @@
         const seasonStart = '2023-12-12';
 
         const trackNames = {
+            'ALGA': 'Algarve International Circuit',
             'BARB': 'Barber Motorsports Park',
             'BARC': 'Barcelona',
             'BARH': 'Barcelona (Historic)',
@@ -50,6 +51,7 @@
             'LONG': 'Long Beach Street Circuit',
             'MAGN': 'Magny Cours',
             'MIDO': 'Mid-Ohio',
+            'MISA': 'Misano',
             'MONZ': 'Monza',
             'MONC': 'Monza (Combined)',
             'MZNF': 'Monza (without first chicane)',
@@ -87,6 +89,7 @@
             'WACB': 'Watkins Glen Classic Boot',
             'WATI': 'Watkins Glen International Cup',
             'WILL': 'Willow Springs',
+            'WINT': 'Winton Motor Raceway',
             'ZAND': 'Zandvoort',
             'ZOLD': 'Zolder',
         };
@@ -96,13 +99,20 @@
             'AUD3': 'Audi R8 LMS GT3',
             'BMW3': 'BMW M4 GT3',
             'BMW4': 'BMW M4 GT4',
+            'BMW8': 'BMW M8 GTE',
             'FEF3': 'Ferrari 296 GT3',
             'FOMU': 'Ford Mustang FR500',
+            'FVEE': 'Formula Vee',
+            'CTSV': 'Cadillac CTS-V',
             'CHEE': 'Chevrolet Corvette C8.R GTE',
+            'CHE1': 'Chevrolet Corvette C6.R GT1',
+            'CLIO': 'Renault Clio',
             'CIVI': 'Honda Civic',
             'ELAN': 'Hyundai Elantra',
             'LIG3': 'Ligier JS P320 LMP3',
             'LO49': 'Lotus 49',
+            'LO79': 'Lotus 79',
+            'MAZD': 'global Mazda MX-5 Cup',
             'AMG3': 'Mercedes-AMG GT3 2020',
             'LAM3': 'Lamborghini Huracán GT3',
             'LMAZ': 'Legacy Pro Mazda',
@@ -117,6 +127,7 @@
             'CLIO': 'Renault Clio',
             'SKIP': 'Skip Barber Formula 2000',
             'SPEF': 'Spec Racer Ford',
+            'STOB': 'Stock Car Brasil Chevrolet Cruze',
             'STST': 'Street Stock',
             'GR86': 'Toyota GR86',
             'JETT': 'VW Jetta',
@@ -127,108 +138,101 @@
                 id: 'GT3',
                 bgColor: '#ca301f',
                 url: 'https://www.iracing.com/series/gt-sprint-series/',
-                tracks: ['SPAF', 'MUGE', 'ARAG', 'DAYT', 'HOCK', 'CHAR', 'SUZU', 'OULT', 'RATL', 'OKAY', 'MOPA', 'COTA']
+                tracks: ['ALGA', 'INLA', 'WATB', 'ROAM', 'MONZ', 'LEMA', 'SEBR', 'REDB', 'MOPA', 'NORC', 'SUZU', 'RATL']
             },
             {
                 id: 'IMSA',
                 bgColor: '#373839',
                 url: 'https://www.iracing.com/series/imsa-series/',
-                tracks: ['CANT', 'HOCK', 'LEMA', 'LONG', 'WATB', 'DAYT', 'NORC', 'SEBR', 'MUGE', 'ARAG', 'GIVI', 'SILV']
-            },
-            {
-                id: 'P/GT',
-                bgColor: '#fcca00',
-                textColor: '#000000',
-                url: 'https://www.iracing.com/series/proto-gt-challenge/',
-                tracks: ['WACB', 'ROAM', 'SPAF', 'NORC', 'DAYT', 'RATL', 'MZNF', 'SEBR', 'REDB', 'LEMA', 'OKAY', 'LAGU']
+                tracks: ['SUZU', 'SEBR', 'ALGA', 'IMOL', 'RATL', 'LONG', 'MUGE', 'SPAF', 'LAGU', 'INDY', 'MISA', 'DETR']
             },
             {
                 id: 'GTE',
                 bgColor: '#1b213e',
                 url: 'https://www.iracing.com/series/gte-sprint-series/',
-                tracks: ['MUGE', 'GIVI', 'SPAF', 'CANT', 'MONZ', 'VIRG', 'LEMA', 'LAGU', 'RATL', 'SUZU', 'NURB', 'JERE']
+                tracks: ['SEBR', 'LEMA', 'RATL', 'ROAM', 'IMOL', 'SPAF', 'MOPA', 'MONZ', 'NORC', 'DAYT', 'SUZU', 'WATB']
             },
             {
                 id: 'FEFE',
                 bgColor: '#fdef02',
                 textColor: '#000000',
                 url: 'https://www.iracing.com/series/ferrari-gt3-challenge/',
-                tracks: ['MUGE', 'RUDS', 'SPAF', 'OULT', 'CHAR', 'DAYT', 'ARAG', 'ZAND', 'SEBR', 'MONZ', 'OKAY', 'VIRG']
+                tracks: ['ALGA', 'SEBR', 'VIRG', 'OSCH', 'MUGE', 'SONO', 'LAGU', 'LONG', 'OULT', 'MISA', 'OKAY', 'ARAG']
             },
             {
                 id: 'GT4',
                 bgColor: '#615299',
                 url: 'https://www.iracing.com/series/gt4-falken-tyre-challenge/',
-                tracks: ['MZNF', 'MOTE', 'SILV', 'DAYT', 'RUDS', 'MOPA', 'SAND', 'SUZU', 'MUGE', 'HUNG', 'OKAY', 'LONG']
+                tracks: ['OULT', 'SEBR', 'BARB', 'ZAND', 'RATL', 'IMOL', 'ARAG', 'NORC', 'ALGA', 'LAGU', 'SPAF', 'MIDO']
             },
             {
                 id: 'TCR',
                 bgColor: '#000000',
                 url: 'https://www.iracing.com/series/touring-car-challenge/',
-                tracks: ['RUDS', 'MOTE', 'ROAM', 'DAYT', 'HOCK', 'MOPA', 'VIRG', 'SUZU', 'OKAY', 'HUNG', 'WATI', 'LONG']
+                tracks: ['SUMM', 'SEBR', 'DONN', 'ZAND', 'CHAR', 'IMOL', 'KNOC', 'LAGU', 'RATL', 'NORC', 'OULT', 'MIDO']
             },
             {
                 id: 'IMSP',
                 bgColor: '#045ca8',
                 url: 'https://www.iracing.com/series/iracing-imsa-michelin-pilot-challenge/',
-                tracks: ['', 'MOTE', '', 'DAYT', '', 'MOPA', '', 'SUZU', '', 'HUNG', '', 'LONG']
+                tracks: ['', 'SEBR', '', 'ZAND', '', 'IMOL', '', 'NORC', '', 'LAGU', '', 'MIDO']
             },
             {
                 id: 'PCUP',
                 bgColor: '#25395e',
                 url: 'https://www.iracing.com/series/porsche-iracing-cup/',
-                tracks: ['INLA', 'ZAND', 'ARAG', 'SPAF', 'SEBR', 'ROAM', 'IMOL', 'SILV', 'SONO', 'NORC', 'BRAN', 'ORAN']
+                tracks: ['HOCK', 'BRAN', 'RATL', 'VIRG', 'ZOLD', 'ROAM', 'SEBR', 'MOPA', 'SPAF', 'NORC', 'MUGE', 'ZAND']
             },
             {
                 id: 'GR86',
                 bgColor: '#ff6517',
                 url: 'https://www.iracing.com/series/gr-cup-fixed/',
-                tracks: ['LIME', 'SAND', 'REDN', 'TSUK', 'INLA', 'CANT', 'CHAR', 'WILL', 'SEBR', 'OULT', 'RATL', 'WATB']
+                tracks: ['LEDE', 'BRAN', 'WINT', 'OSCH', 'INLA', 'SEBR', 'DAYT', 'LONG', 'RATL', 'SNET', 'SAND', 'MOPA']
             },
             {
-                id: 'SF23',
-                bgColor: '#757479',
+                id: 'SUFO',
+                bgColor: '#171720',
                 url: 'https://www.iracing.com/series/formula-b-super-formula-series//',
-                tracks: ['SPAF', 'INLA', 'WATB', 'OKAY', 'IMOL', 'RATL', 'REDB', 'LONG', 'SILV', 'MONZ', 'MUGE', 'SUZU']
+                tracks: ['ROAM', 'HOCK', 'RATL', 'GIVI', 'MOTE', 'MONZ', 'HUNG', 'BARH', 'ALGA', 'SUZU', 'COTA', 'WATC']
             },
             {
                 id: 'F3',
                 bgColor: '#cea403',
                 url: 'https://www.iracing.com/series/f3-championship/',
-                tracks: ['HOCK', 'MOPA', 'GIVI', 'RATL', 'SILV', 'INDY', 'MUGE', 'IMOL', 'SEBR', 'ZAND', 'OULT', 'INLA']
+                tracks: ['BARC', 'MAGN', 'COTA', 'PHIL', 'NURB', 'INDY', 'MUGE', 'ALGA', 'MONZ', 'ZAND', 'OULT', 'ROAM']
             },
             {
                 id: 'F4',
                 bgColor: '#672302',
                 url: 'https://www.iracing.com/series/fia-formula-4-challenge/',
-                tracks: ['OULT', 'ZAND', 'SEBR', 'RATL', 'TSUK', 'SPAF', 'HUNG', 'JERE', 'SILV', 'OKAY', 'MOPA', 'NURB']
+                tracks: ['SNET', 'MUGE', 'SEBR', 'HOCK', 'VIRG', 'ZAND', 'JERE', 'RATL', 'LEDE', 'BRAN', 'MOPA', 'ALGA']
             },
             {
                 id: 'SR10',
                 bgColor: '#fdc10f',
                 textColor: '#000000',
                 url: 'https://www.iracing.com/series/radical-esports-cup-fixed/',
-                tracks: ['REDB', 'NORD', 'LAGU', 'SPAF', 'TSUK', 'SUZU', 'OULT', 'SEBR', 'RATL', 'MZNF', 'MOPA', 'DONN']
+                tracks: ['LAGU', 'RUDS', 'RATL', 'WATB', 'IMOL', 'MOPA', 'INLA', 'CANT', 'BARB', 'SEBR', 'NORD', 'ROAM']
             },
             {
                 id: '1600',
                 bgColor: '#af4705',
                 textColor: '#fdfdfd',
                 url: 'https://www.iracing.com/series/formula-1600-rookie-series/',
-                tracks: ['LIME', 'HOCA', 'TSUK', 'MOPA', 'CANT', 'PHOE', 'INLA', 'SAND', 'CHAR', 'LONG', 'RATS', 'RUDS']
+                tracks: ['SUMM', 'SEBR', 'OKAY', 'BRAN', 'CANT', 'OSCH', 'HOCK', 'SAND', 'SNET', 'IMOL', 'LONG', 'VIRG']
             },
             {
                 id: 'SKIP',
                 bgColor: '#fdfdfd',
                 textColor: '#eb1c24',
                 url: 'https://www.iracing.com/series/skip-barber-race-series/',
-                tracks: ['OULT', 'BRAN', 'MONC', 'ZAND', 'ORAN', 'MAGN', 'MOPA', 'PHOE', 'DETR', 'SPAF', 'BARB', 'SUMM']
+                tracks: ['OKAY', 'BRAN', 'MIDO', 'SUZU', 'LEDE', 'ZAND', 'BARB', 'MOPA', 'OSCH', 'JERE', 'DETR', 'TSUK']
             },
             {
                 id: 'RING',
                 bgColor: '#3d0f15',
                 url: 'https://www.iracing.com/series/ring-meister-series/',
-                cars: ['SKIP', 'AUD3', 'ELAN', 'STST', 'CHEE', 'MCL4', 'PONT', 'RSR8', 'LIG3', 'LMAZ', 'POR4', 'LAM3']
+                cars: ['CTSV', 'CLIO', 'LIG3', 'LO79', 'CIVI', 'BMW8', 'STOB', 'MAZD', 'CHE1', 'FEF3', 'RSR8', 'FVEE']
             }
         ];
 
