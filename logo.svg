@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#535353"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.46368898"
+     inkscape:cx="946.7553"
+     inkscape:cy="1222.8024"
+     inkscape:window-width="2558"
+     inkscape:window-height="1360"
+     inkscape:window-x="2546"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#16d3fe;fill-opacity:1;stroke:none;stroke-width:6.35;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4"
+       width="129.64583"
+       height="129.64583"
+       x="42.567474"
+       y="79.514153"
+       inkscape:label="bluebackground" />
+    <path
+       id="rect5"
+       style="fill:#fe092c;stroke-width:6.35"
+       inkscape:label="redbackground"
+       d="M 42.567474,79.514153 124.213,79.514 90.567,209.16 l -48,-2e-5 z"
+       sodipodi:nodetypes="ccccc" />
+    <g
+       id="g1"
+       transform="translate(-1.8414154,1.7750854)"
+       inkscape:label="textgroup">
+      <rect
+         style="fill:#1d2344;fill-opacity:1;stroke:none;stroke-width:6.35;stroke-dasharray:none;stroke-opacity:1"
+         id="rect6"
+         width="129.646"
+         height="79.375"
+         x="44.408806"
+         y="102.87448"
+         inkscape:label="textbackground" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:900;font-stretch:normal;font-size:76.185px;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy Italic';fill:#1d2344;fill-opacity:1;stroke:none;stroke-width:5.15515;stroke-dasharray:none;stroke-opacity:1"
+         x="94.785172"
+         y="156.84024"
+         id="text6"
+         transform="matrix(0.90888782,0,-0.2567149,1.1002458,0,0)"
+         inkscape:label="textRO"><tspan
+           sodipodi:role="line"
+           id="tspan6"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:76.185px;font-family:Arial;-inkscape-font-specification:'Arial Heavy';fill:#ffffff;stroke-width:5.15515"
+           x="94.785172"
+           y="156.84024">RO</tspan></text>
+    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:9.525;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3"
+       width="135.46666"
+       height="135.46666"
+       x="39.657059"
+       y="76.603737"
+       ry="16.933332"
+       inkscape:label="whiteborder"
+       inkscape:export-filename="Logo.png"
+       inkscape:export-xdpi="91.701492"
+       inkscape:export-ydpi="91.701492" />
+  </g>
+</svg>
